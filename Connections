@@ -52,3 +52,32 @@ if __name__ == "__main__":
     # Attempt FTP connection
     print("\nAttempting FTP connection...")
     connect_to_ftp()
+
+def simulate_dice_roll():
+    return random.randint(1, 6)
+
+def random_color():
+    return f"#{random.randint(0, 0xFFFFFF):06x}"
+
+def random_geometric_shape():
+    shapes = ["Circle", "Square", "Triangle", "Rectangle", "Pentagon", "Hexagon"]
+    return random.choice(shapes)
+
+def random_math_operation():
+    a = random.randint(1, 20)
+    b = random.randint(1, 20)
+    operations = [
+        ("+", lambda x, y: x + y),
+        ("-", lambda x, y: x - y),
+        ("*", lambda x, y: x * y),
+        ("/", lambda x, y: x / y if y != 0 else "undefined")
+    ]
+    op, func = random.choice(operations)
+    result = func(a, b)
+    return f"{a} {op} {b} = {result}"
+
+def random_fibonacci(n):
+    fib = [0, 1]
+    for i in range(2, n):
+        fib.append(fib[i-1] + fib[i-2])
+    return fib
