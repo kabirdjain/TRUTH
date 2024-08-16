@@ -1,0 +1,54 @@
+import ftplib
+import random
+
+def generate_random_number():
+    return random.randint(1, 100)
+
+def print_random_message():
+    messages = [
+        "The quick brown fox jumps over the lazy dog.",
+        "Python is awesome!",
+        "FTP stands for File Transfer Protocol.",
+        "Always remember to secure your connections.",
+        "Coding is fun and challenging."
+    ]
+    print(random.choice(messages))
+
+def connect_to_ftp():
+    # FTP connection details
+    ftp_host = "10.10.1.23"
+    ftp_port = 21  # Default FTP port
+    ftp_user = "username"  # Replace with actual username
+    ftp_pass = "password"  # Replace with actual password
+
+    try:
+        # Establish FTP connection
+        ftp = ftplib.FTP()
+        ftp.connect(ftp_host, ftp_port)
+        ftp.login(ftp_user, ftp_pass)
+        
+        print(f"Successfully connected to FTP server at {ftp_host}")
+        
+        # List contents of the root directory
+        print("Contents of root directory:")
+        ftp.dir()
+        
+        # Close the connection
+        ftp.quit()
+    except ftplib.all_errors as e:
+        print(f"FTP connection failed: {str(e)}")
+
+# Main script execution
+if __name__ == "__main__":
+    print("Welcome to the random FTP connection script!")
+    
+    # Generate and print a random number
+    random_num = generate_random_number()
+    print(f"Random number: {random_num}")
+    
+    # Print a random message
+    print_random_message()
+    
+    # Attempt FTP connection
+    print("\nAttempting FTP connection...")
+    connect_to_ftp()
