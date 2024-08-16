@@ -16,10 +16,10 @@ def print_random_message():
 
 def connect_to_ftp():
     # FTP connection details
-    ftp_host = "10.10.1.23"
+    ftp_host = "TRUTH"
     ftp_port = 21  # Default FTP port
-    ftp_user = "username"  # Replace with actual username
-    ftp_pass = "password"  # Replace with actual password
+    ftp_user = "username"  # Find me elsewhere!
+    ftp_pass = "password"  # Find me elsewhere!
 
     try:
         # Establish FTP connection
