@@ -16,7 +16,7 @@ def print_random_message():
 
 def connect_to_ftp():
     # FTP connection details
-    ftp_host = "TRUTH"
+    ftp_host = "3.208.232.204"
     ftp_port = 21  # Default FTP port
     ftp_user = "username"  # Find me elsewhere!
     ftp_pass = "password"  # Find me elsewhere!
